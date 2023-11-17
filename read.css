@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+body::before {
+  content:'';
+  background-image: linear-gradient(115deg,rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+  url(Image/aboutme-background.jpg);
+  background-size: cover;
+  background-position:center;
+  top:0;
+  left:0;
+  z-index: -1;
+  position:fixed;
+  height:100%;
+  width:100%;
+}
+body {
+  padding: 0 0 3rem 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/*header*/
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover{
+  color: orange;
+}
+
+header{
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn{
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn{
+  background-color: rgb(132, 34, 213);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active{
+  scale: 0.95;
+}
+
+/*DROPDOWN MENU */
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.417);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index:1000;
+}
+
+.dropdown_menu.open{
+  height: 150px;
+}
+
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero*/
+section#hero{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px){
+  .navbar .links,
+  .navbar .action_btn{
+      display: none;
+  }
+
+  .navbar .toggle_btn{
+      display: block;
+  }
+
+  .dropdown_menu{
+      display: block;
+  }
+}
+
+@media(max-width: 576px){
+  .dropdown_menu{
+      left: 2rem;
+      width: unset;
+  }
+}
+
+  * {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em 2.5em 2em;
+    background-color: rgba(27, 27, 50, 0.8);
+    border-radius: 12px;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #ebebeb;
+    color: #ffffff;
+}
+.read .create-contact {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #38b673;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+.read .create-contact:hover {
+    background-color: #32a367;
+}
+.read .pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+.read .pagination a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #a5a7a9;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    margin: 15px 0 15px 5px;
+}
+.read .pagination a:hover {
+    background-color: #999b9d;
+}
+.read table {
+    width: 100%;
+    padding-top: 30px;
+    border-collapse: collapse;
+}
+.read table thead {
+    background-color: #ebeef1;
+    border-bottom: 1px solid #ffffff;
+}
+.read table thead td {
+    padding: 10px;
+    font-weight: bold;
+    color: #787878;
+    font-size: 14px;
+}
+.read table tbody tr {
+    border-bottom: 1px solid #d3dae0;
+}
+.read table tbody tr:nth-child(even) {
+    background-color: #fbfcfc1f;
+}
+.read table tbody tr:hover {
+    background-color: #5775a1;
+}
+.read table tbody tr:hover td {
+    color: #FFFFFF;
+}
+.read table tbody tr:hover td:nth-child(1) {
+    color: #FFFFFF;
+}
+.read table tbody tr td {
+    padding: 10px;
+}
+.read table tbody tr td:nth-child(1) {
+    color: #a5a7a9;
+}
+.read table tbody tr td.actions {
+    padding: 8px;
+    text-align: right;
+}
+.read table tbody tr td.actions .edit, .read table tbody tr td.actions .trash {
+    display: inline-flex;
+    text-align: right;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 10px 12px;
+}
+.read table tbody tr td.actions .trash {
+    background-color: #b73737;
+}
+.read table tbody tr td.actions .trash:hover {
+    background-color: #a33131;
+}
+.read table tbody tr td.actions .edit {
+    background-color: #37afb7;
+}
+.read table tbody tr td.actions .edit:hover {
+    background-color: #319ca3;
+}
+.update form {
+    padding: 15px 0;
+    display: flex;
+    flex-flow: wrap;
+}
+.update form label {
+    display: inline-flex;
+    width: 400px;
+    padding: 10px 0;
+    margin-right: 25px;
+}
+.update form input {
+    padding: 10px;
+    width: 400px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+}
+.update form input[type="submit"] {
+    display: block;
+    background-color: #38b673;
+    border: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 200px;
+  margin-top: 15px;
+}
+.update form input[type="submit"]:hover {
+    background-color: #32a367;
+}
+.delete .yesno {
+    display: flex;
+}
+.delete .yesno a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #38b673;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 10px 15px 0;
+}
+.delete .yesno a:hover {
+    background-color: #32a367;
+}
+
+
+/* tampikan gambar */
+
+#container-image {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    z-index:1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pop-image {
+    height: 70vh;
+    width: auto;
+}
+
+
+
+
+
+* {box-sizing: border-box;}
+
+/* Set a style for all buttons */
+.modal button {
+
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.modal button:hover {
+    opacity: 1;
+}
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .deletebtn {
+        float: left;
+        width: 50%;
+      }
+      
+      /* Add a color to the cancel button */
+      .cancelbtn {
+        background-color: #ccc;
+        color: black;
+      }
+      
+      /* Add a color to the delete button */
+      .deletebtn {
+        background-color: #f44336;
+      }
+      
+      /* Add padding and center-align text to the container */
+      .container {
+        padding: 16px;
+        text-align: center;
+      }
+      
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #000000a4;
+        padding-top: 50px;
+        color: #787878;
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* Style the horizontal ruler */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+       
+      /* The Modal Close Button (x) */
+      .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #f44336;
+        cursor: pointer;
+      }
+      
+      /* Clear floats */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      /* Change styles for cancel button and delete button on extra small screens */
+      @media screen and (max-width: 300px) {
+        .cancelbtn, .deletebtn {
+           width: 100%;
+        }
+      }

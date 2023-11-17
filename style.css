@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+body::before {
+  content:'';
+  background-image: linear-gradient(115deg,rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)),
+  url(https://img.freepik.com/free-photo/aerial-view-business-team_53876-124515.jpg?w=1800&t=st=1690999663~exp=1691000263~hmac=90385b49edc6ed76e90252dd139012b1dc955896a6920909c9f045f80eb124c1);
+  background-size: cover;
+  background-position:center;
+  top:0;
+  left:0;
+  z-index: -1;
+  position:fixed;
+  height:100%;
+  width:100%;
+}
+body {
+  margin: 0;
+  padding: 0 0 3rem 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover{
+  color: orange;
+}
+
+/*header*/
+header{
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn{
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn{
+  background-color: rgb(132, 34, 213);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active{
+  scale: 0.95;
+}
+
+/*DROPDOWN MENU */
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.417);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index:1000;
+}
+
+.dropdown_menu.open{
+  height: 150px;
+}
+
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero*/
+section#hero{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px){
+  .navbar .links,
+  .navbar .action_btn{
+      display: none;
+  }
+
+  .navbar .toggle_btn{
+      display: block;
+  }
+
+  .dropdown_menu{
+      display: block;
+  }
+}
+
+@media(max-width: 576px){
+  .dropdown_menu{
+      left: 2rem;
+      width: unset;
+  }
+}
+
+#title, #description {
+  text-align: center;
+}
+#description {
+  font-style: italic;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 720px;
+}
+form {
+  background-color:rgba(27, 27, 50, 0.8);
+  padding: 2em;
+  font-size: 18px;
+}
+.form-group {
+  margin-bottom: 2rem;
+}
+label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+input {
+  display: block;
+  width: 100%;
+  height: 38px;
+  margin: 0.5em 0;
+  padding: 6px 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.lainnya {
+  display: block;
+}
+.lainnya span {
+  display: flex;
+  align-items: center;
+}
+select {
+  height: 38px;
+  font-size: 16px;
+  width: 100%;
+}
+input[type="radio"], input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px; 
+}
+textarea {
+  width: 100%;
+  font-size: 18px;
+  font-family:'Poppins', sans-serif;
+}
+
+
+.read .create-contact {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #38b673;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+.read .create-contact:hover {
+  background-color: #32a367;
+}
+.read .pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+.read .pagination a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #a5a7a9;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  margin: 15px 0 15px 5px;
+}
+.read .pagination a:hover {
+  background-color: #999b9d;
+}
+.read table {
+  width: 100%;
+  padding-top: 30px;
+  border-collapse: collapse;
+}
+.read table thead {
+  background-color: #ebeef1;
+  border-bottom: 1px solid #d3dae0;
+}
+.read table thead td {
+  padding: 10px;
+  font-weight: bold;
+  color: #767779;
+  font-size: 14px;
+}
+.read table tbody tr {
+  border-bottom: 1px solid #d3dae0;
+}
+.read table tbody tr:nth-child(even) {
+  background-color: #fbfcfc;
+}
+.read table tbody tr:hover {
+  background-color: #376ab7;
+}
+.read table tbody tr:hover td {
+  color: #FFFFFF;
+}
+.read table tbody tr:hover td:nth-child(1) {
+  color: #FFFFFF;
+}
+.read table tbody tr td {
+  padding: 10px;
+}
+.read table tbody tr td:nth-child(1) {
+  color: #a5a7a9;
+}
+.read table tbody tr td.actions {
+  padding: 8px;
+  text-align: right;
+}
+.read table tbody tr td.actions .edit, .read table tbody tr td.actions .trash {
+  display: inline-flex;
+  text-align: right;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 10px 12px;
+}
+.read table tbody tr td.actions .trash {
+  background-color: #b73737;
+}
+.read table tbody tr td.actions .trash:hover {
+  background-color: #a33131;
+}
+.read table tbody tr td.actions .edit {
+  background-color: #37afb7;
+}
+.read table tbody tr td.actions .edit:hover {
+  background-color: #319ca3;
+}
+.update form {
+  padding: 15px 0;
+  display: flex;
+  flex-flow: wrap;
+}
+.update form label {
+  display: inline-flex;
+  width: 400px;
+  padding: 10px 0;
+  margin-right: 25px;
+}
+.update form input {
+  padding: 10px;
+  width: 400px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+}
+.update form input[type="submit"] {
+  display: block;
+  background-color: #38b673;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 200px;
+margin-top: 15px;
+}
+.update form input[type="submit"]:hover {
+  background-color: #32a367;
+}
+.delete .yesno {
+  display: flex;
+}
+.delete .yesno a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #38b673;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  margin: 15px 10px 15px 0;
+}
+.delete .yesno a:hover {
+  background-color: #32a367;
+}
